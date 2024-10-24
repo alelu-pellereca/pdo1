@@ -1,7 +1,7 @@
-const express = require('express');
+import express, { json } from 'express';
 
 const app = express();
-app.use(express.json());
+app.use(json());
 
 // Ruta básica
 app.get('/', (req, res) => {
@@ -14,4 +14,4 @@ app.post('/echo', (req, res) => {
     res.status(200).json(body);
 });
 
-module.exports = app;
+export default app;
