@@ -1,27 +1,15 @@
 #version: '3'
 services: 
-  wordpress-service: 
-    image: wordpress
+  imagenback1: 
+    image: a9c8cae967a5afd929754f3d8a72843faf2d08bfe7062dc6079841a79a8b60de
     restart: always
-    ports:
-      - 8080:80
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: exampleuser
-      WORDPRESS_DB_PASSWORD: examplepass
-      WORDPRESS_DB_NAME: exampledb
     volumes:
-      - wordpress:/var/www/html
-  db:
-    image: mysql:8.0
+      - imagenback1:/vol
+  imagenfront1:
+    image: a20aaa3d1a7d4b5dc29509a5edb909611266ade7575d920e62287dad539becbf
     restart: always
-    environment:
-      MYSQL_DATABASE: exampledb
-      MYSQL_USER: exampleuser
-      MYSQL_PASSWORD: examplepass
-      MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
-      - db:/var/lib/mysql
+      - imagenfront1:/vol
 volumes:
-  wordpress:
-  db:
+  imagenback1:
+  imagenfront1:
