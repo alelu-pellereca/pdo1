@@ -5,11 +5,15 @@ services:
     restart: always
     volumes:
       - imagenback:/vol
+    ports:
+      - "80:80"
   imagenfront1:
     image: alepellereca/imagenfront
     restart: always
     volumes:
       - imagenfront:/vol
+    ports:
+      - "30:30"
 volumes:
   imagenback1:
   imagenfront1:
