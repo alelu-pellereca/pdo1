@@ -23,4 +23,4 @@ jobs:
         run: docker build -t alelu-pellereca/pdo1
   
       - name: Publicar la imagen en Docker Hub
-        run: docker push alelu-pellereca/pdo1
+        run: docker push alelu-pellereca/pdo1 .
