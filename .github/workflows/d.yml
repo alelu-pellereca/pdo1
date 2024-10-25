@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Construir la imagen Docker
-        run: docker build -t your-dockerhub-username/app .
+        run: docker build -t https://github.com/alelu-pellereca/pdo1.git .
   
       - name: Publicar la imagen en Docker Hub
-        run: docker push your-dockerhub-username/app
+        run: docker push https://github.com/alelu-pellereca/pdo1.git
