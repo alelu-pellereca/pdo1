@@ -1,6 +1,6 @@
 const express = require('express');
 const { json } = require('express');
-
+import { listen } from './app';
 const PORT = 8080//process.env.PORT || 8080;
 
 listen(PORT, () => {
