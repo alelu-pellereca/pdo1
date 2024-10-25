@@ -1,11 +1,11 @@
-import express, { json } from 'express';
+const express = require('express');
 
 const app = express();
-app.use(json());
+app.use(express.json());
 
 // Ruta básica
 app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Hello World probando!' });
+    res.status(200).json({ message: 'Hello World we are DevOps!' });
 });
 
 // Ruta de ejemplo para pruebas
@@ -14,4 +14,4 @@ app.post('/echo', (req, res) => {
     res.status(200).json(body);
 });
 
-export default app;
+module.exports = app;
