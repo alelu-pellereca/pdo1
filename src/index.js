@@ -1,4 +1,4 @@
-import { listen } from './app';
+const { listen } = require('./app');
 
 const PORT = 8080//process.env.PORT || 8080;
 
