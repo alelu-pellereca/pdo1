@@ -1,10 +1,10 @@
+FROM node:10.13-alpine
+WORKDIR /opt
 
-FROM node:22.9.0-alpine
-COPY package.json /opt/
-WORKDIR /opt/ 
-COPY ./ ./
+COPY package.json ./
 RUN npm install
 
+COPY . .
+
 EXPOSE 3000
- 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start","node","server.js"]

@@ -1,15 +1,15 @@
 #version: '3'
 services: 
   imagenback1: 
-    image: a9c8cae967a5afd929754f3d8a72843faf2d08bfe7062dc6079841a79a8b60de
+    image: alepellereca/imagenback
     restart: always
     volumes:
-      - imagenback1:/vol
+      - imagenback:/vol
   imagenfront1:
-    image: a20aaa3d1a7d4b5dc29509a5edb909611266ade7575d920e62287dad539becbf
+    image: alepellereca/imagenfront
     restart: always
     volumes:
-      - imagenfront1:/vol
+      - imagenfront:/vol
 volumes:
   imagenback1:
   imagenfront1:
