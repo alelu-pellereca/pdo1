@@ -1,4 +1,3 @@
-
 {
   "name": "pdo1",
   "version": "1.0.0",
@@ -24,9 +23,10 @@
     "url": "https://github.com/alelu-pellereca/pdo1/issues"
   },
   "homepage": "https://github.com/alelu-pellereca/pdo1#readme",
-  
   "dependencies": {
     "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "gulp": "^5.0.0"
   }
-
 }
