@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../src/app');
+const app = require('./app'); // Ruta correcta a tu app.js
 
 describe('API Tests', () => {
     it('should return Hello World on GET /', async () => {
@@ -15,16 +15,21 @@ describe('API Tests', () => {
         expect(response.body).toEqual(data);
     });
 
-    it('should return image details for /image1', async () => {
-        const response = await request(app).get('/image1');
+    it('Frontend', async () => {
+        const response = await request(app).get('/frontend');
         expect(response.status).toBe(200);
-        expect(response.body).toEqual({ image: 'alepellereca/imagenfront:latest', description: 'Frontend' });
+        expect(response.body).toEqual({
+            image: 'alepellereca/imagenfront:latest',
+            description: 'Frontend',
+        });
     });
 
-    it('should return image details for /image2', async () => {
-        const response = await request(app).get('/image2');
+    it('Backend', async () => {
+        const response = await request(app).get('/backend');
         expect(response.status).toBe(200);
-        expect(response.body).toEqual({ image: 'alepellereca/imagenback:latest', description: 'Backend' });
+        expect(response.body).toEqual({
+            image: 'alepellereca/imagenback:latest',
+            description: 'Backend',
+        });
     });
 });
-
