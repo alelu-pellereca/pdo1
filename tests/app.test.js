@@ -14,4 +14,17 @@ describe('API Tests', () => {
         expect(response.status).toBe(200);
         expect(response.body).toEqual(data);
     });
+
+    it('should return image details for /image1', async () => {
+        const response = await request(app).get('/image1');
+        expect(response.status).toBe(200);
+        expect(response.body).toEqual({ image: 'alepellereca/imagenfront:latest', description: 'Frontend' });
+    });
+
+    it('should return image details for /image2', async () => {
+        const response = await request(app).get('/image2');
+        expect(response.status).toBe(200);
+        expect(response.body).toEqual({ image: 'alepellereca/imagenback:latest', description: 'Backend' });
+    });
 });
+
