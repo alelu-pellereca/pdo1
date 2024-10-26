@@ -2,13 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.json({ message: 'Hello World gral!' });
-});
 
-app.post('/echo', (req, res) => {
-    res.json(req.body);
-});
 
 // Nueva ruta para la primera imagen
 app.get('/image1', (req, res) => {
