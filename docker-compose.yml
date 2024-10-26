@@ -1,19 +1,17 @@
-#version: '3'
 services: 
-  imagenback1: 
-    image: alepellereca/imagenback
-    restart: always
-    volumes:
-      - imagenback:/vol
-    ports:
-      - "80:80"
-  imagenfront1:
+  imagenfront:
     image: alepellereca/imagenfront
     restart: always
-    volumes:
-      - imagenfront:/vol
     ports:
-      - "30:30"
-volumes:
-  imagenback1:
-  imagenfront1:
+      - "3000:3000"  
+    volumes: 
+    - .:/opt
+
+  imagenback:
+    image: alepellereca/imagenback
+    restart: always
+    ports:
+    - "8081:8081"  
+    volumes: 
+    - .:/opt
+
